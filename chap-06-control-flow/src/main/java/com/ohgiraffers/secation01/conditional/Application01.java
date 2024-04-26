@@ -16,7 +16,7 @@ public class Application01 {
 
 
     }
-
+     // 메소드 : 사용자 정의 타입
     /*
     계산기 만들기
     두 수와 연산기호을 입력받아
@@ -70,9 +70,7 @@ public class Application01 {
         // 반환한다.
 
         // 한번에 연산식 입력받기
-
-
-    /*
+    //
     public String call(){
         Scanner sc = new Scanner(System.in);
         String input = sc.nextLine();
@@ -94,7 +92,7 @@ public class Application01 {
         }
         return "" + result1;
     }
-    */
+
 
 
 }
