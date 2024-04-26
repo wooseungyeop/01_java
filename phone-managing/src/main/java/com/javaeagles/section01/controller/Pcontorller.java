@@ -43,4 +43,13 @@ public class Pcontorller {
         String test = pservice.ptest2(no);
         return test;
     }
+
+    public String ptest3(int num, String re){
+        if(re.equals("")){
+            return "수정할 정보를 입력하지 않았습니다.";
+        }
+        String test = pservice.ptest3(num, re);
+
+        return test;
+    }
 }

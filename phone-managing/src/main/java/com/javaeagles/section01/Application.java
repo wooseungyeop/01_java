@@ -47,12 +47,48 @@ public class Application {
                                                                                 // 컨트롤러에게 할당받은 값을 test로 저장한다.
                     break;
                 case 2 :
-                    // 수정
-                    // 수정하고 싶은 이름 입력
-                    // 입력 받은 이름을 조회하고 존재하는 확인
-                    // 존재하면 true 수정할 항목선택 존재하지않으면 false
-                    // 컨트롤러 넘겨
+                    //사용자가 이름을 입력해준다.
+                    int num = 0;
+                    System.out.println("수정할 정보를 입력해주세요 : ");
+                    String re = sc.nextLine();
+                    if(re.equals("이름")){
+                        num = 1;
+                        System.out.println("수정할 이름을 입력해주세요 :");
+                        re = sc.nextLine();
+                        System.out.println(re);
+                        test = pcontorller.ptest3(num, re);
+                    }
+                    else if(re.equals("번호")){
+                        num = 2;
+                        System.out.println("수정할 번호을 입력해주세요 :");
+                        re = sc.nextLine();
+                        test = pcontorller.ptest3(num, re);
+                    }
+                    else if(re.equals("그룹")){
+                        num = 3;
+                        System.out.println("수정할 그룹을 입력해주세요 :");
+                        re = sc.nextLine();
+                        test = pcontorller.ptest3(num, re);
+                    }
+                    else if(re.equals("메모")){
+                        num = 4;
+                        System.out.println("수정할 메모을 입력해주세요 :");
+                        re = sc.nextLine();
+                        test = pcontorller.ptest3(num, re);
+                    }
+                    else if(re.equals("이메일")){
+                        num = 5;
+                        System.out.println("수정할 이메일을 입력해주세요 :");
+                        re = sc.nextLine();
+                        test = pcontorller.ptest3(num, re);
+                    }
+                    else{
+                        System.out.println("번호를 다시 입력해주세요..");
+                        continue;
+                    }
+
                     break;
+
                 case 3 :
                     System.out.println("삭제할 번호를 입력해주세요 : ");            // 할당 받은 데이터 안에 삭제하고 싶은 정보의 번호를 입력한다. (인덱스에 들어간 번호는 0번 부터 시작된다.)
                     int no = Integer.parseInt(sc.nextLine());                  // 정수형 변수를 만들어 nextLine으로 사용자가 입력한 번호를 받아 정수형으로 강제 변환해준다.

@@ -36,4 +36,12 @@ public class Pservice {
         String test = prepository.ptest2(no);                           // 레파지토리에 있는 ptest2(매개변수 : no)를 참조해서 test에 저장한다.
         return test;                                                    // 값이 저장된 test를 반환해준다.
     }
+
+    public String ptest3(int num, String re){
+
+        String test = prepository.ptest3(num, re);
+
+
+        return test;
+    }
 }

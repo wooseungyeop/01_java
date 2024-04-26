@@ -37,4 +37,28 @@ public class Prepository {
         }
         return "에 해당되는 이름의 정보가 삭제되었습니다.";
     }
+
+    public String  ptest3(int num, String re){
+        PhoneDTO phoneDTO = (PhoneDTO)tests.get(num);
+        if(num == 1){
+            phoneDTO.setName(re);
+        }
+        else if(num == 2){
+            phoneDTO.setPhone(re);
+        }
+        else if(num == 3){
+            phoneDTO.setGroup(re);
+        }
+        else if(num == 4){
+            phoneDTO.setMemo(re);
+        }
+        else if(num == 5){
+            phoneDTO.setEmail(re);
+        }
+        else{
+            return "잘못 입력";
+        }
+
+        return phoneDTO.toString() + "수정 완료";
+    }
 }

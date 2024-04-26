@@ -7,12 +7,16 @@ public class PhoneDTO {
     private String memo;
     private String email;
 
+
     public PhoneDTO(String name, String phone, String group, String memo, String email) {
         this.name = name;
         this.phone = phone;
         this.group = group;
         this.memo = memo;
         this.email = email;
+    }
+    public PhoneDTO(String name){
+        this.name = name;
     }
 
     public String getName() {
