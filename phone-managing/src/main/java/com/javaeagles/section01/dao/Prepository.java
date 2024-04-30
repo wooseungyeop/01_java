@@ -45,7 +45,7 @@ public class Prepository {
             //"ex) 1.이름 2.번호 3.그룹 4.메모 5.이메일                 // 따라서 사용자한테 받은 num의 값을 -1 해줌으로써 인덱스 값으로 변환시켜준다.
             switch (upDate) {                                       // uoDate에 해당되는 번호에 따라 inputData 값을 덮어 씌어준다.
                 case 1:
-                    test3.setName(inputData);
+                    test3.setName(inputData); //test
                     break;
                 case 2:
                     test3.setPhone(inputData);
