@@ -12,7 +12,9 @@ public class Application {
         Scanner sc = new Scanner(System.in);                                    // 입력문을 받을 때 스캐너 선언.
         Pcontorller pcontorller = new Pcontorller();                            // 컨트롤러를 컨트롤러 변수로 저장.
         boolean phone1 = true;                                                  // true or false 타입으로 만들어서 변수명을 true 지정.
-        String test = "";                                                       // 문자열 타입으로 변수에 빈 값 생성.
+        String test = "";
+        String inputData;
+    // 문자열 타입으로 변수에 빈 값 생성.
 
 
         while (phone1){
@@ -47,46 +49,16 @@ public class Application {
                                                                                 // 컨트롤러에게 할당받은 값을 test로 저장한다.
                     break;
                 case 2 :
-                    //사용자가 이름을 입력해준다.
-                    int num = 0;
-                    System.out.println("수정할 정보를 입력해주세요 : ");
-                    String re = sc.nextLine();
-                    if(re.equals("이름")){
-                        num = 1;
-                        System.out.println("수정할 이름을 입력해주세요 :");
-                        re = sc.nextLine();
-                        System.out.println(re);
-                        test = pcontorller.ptest3(num, re);
-                    }
-                    else if(re.equals("번호")){
-                        num = 2;
-                        System.out.println("수정할 번호을 입력해주세요 :");
-                        re = sc.nextLine();
-                        test = pcontorller.ptest3(num, re);
-                    }
-                    else if(re.equals("그룹")){
-                        num = 3;
-                        System.out.println("수정할 그룹을 입력해주세요 :");
-                        re = sc.nextLine();
-                        test = pcontorller.ptest3(num, re);
-                    }
-                    else if(re.equals("메모")){
-                        num = 4;
-                        System.out.println("수정할 메모을 입력해주세요 :");
-                        re = sc.nextLine();
-                        test = pcontorller.ptest3(num, re);
-                    }
-                    else if(re.equals("이메일")){
-                        num = 5;
-                        System.out.println("수정할 이메일을 입력해주세요 :");
-                        re = sc.nextLine();
-                        test = pcontorller.ptest3(num, re);
-                    }
-                    else{
-                        System.out.println("번호를 다시 입력해주세요..");
-                        continue;
-                    }
 
+                    System.out.println("수정할 번호를 입력해주세요 : ");            // 저장된 정보를 불러온다, 1번을 불러온다.
+                    int num = sc.nextInt();                                     // ex) 1. 이름, 번호, 그룹, 메모, 이메일
+                    sc.nextLine();                                              //     2. 이름, 번호, 그룹, 메모, 이메일
+                    System.out.println("ex) 1.이름 2.번호 3.그룹 4.메모 5.이메일");    // ArrayList에 있는 인덱스 값을 불러온다. (인덱스의 값은 0부터 ~ n까지)
+                    int upDate = sc.nextInt();
+                    sc.nextLine();                                              // 정수형으로 입력 받으면 \n 개행 문자가 남기 때문에 nextLine으로 넘겨준다.
+                    System.out.println("수정할 데이터를 입력해주세요.");             // 수정할 데이터를 넣는다.
+                    inputData=sc.nextLine();
+                    test=pcontorller.ptest3(num,upDate,inputData);              // 저장되어 있던 정보의 번호 + 수정할 인덱스 번호 + 수정할 데이터를 컨트롤러에 있는 ptest3로 넘긴다.
                     break;
 
                 case 3 :

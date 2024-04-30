@@ -3,6 +3,7 @@ package com.javaeagles.section01.service;
 import com.javaeagles.section01.dao.Prepository;
 import com.javaeagles.section01.dto.PhoneDTO;
 
+import java.sql.SQLType;
 import java.util.ArrayList;
 import java.util.jar.Attributes;
 
@@ -16,8 +17,7 @@ public class Pservice {
     // 전체조회
     // 상세조회
     // 레파지토리로 넘겨주기
-
-    private final Prepository prepository = new Prepository();
+    private Prepository prepository = new Prepository();
 
     public String ptest(PhoneDTO phoneDTO){                             // 어디서든 접근할 수 있는 문자열 ptest메소드를 만들고 매개 변수를 phoneDTO로 준다.
         if(phoneDTO.getName().equals("")){                              // phoneDTO의 이름이 빈칸일 경우 이름 입력 실패로 반환해준다.
@@ -37,11 +37,8 @@ public class Pservice {
         return test;                                                    // 값이 저장된 test를 반환해준다.
     }
 
-    public String ptest3(int num, String re){
+    public String ptest3(int num, int upDate, String inputData){
 
-        String test = prepository.ptest3(num, re);
-
-
-        return test;
+        return prepository.ptest3(num, upDate, inputData);
     }
 }
