@@ -10,7 +10,7 @@ public class Prepository {
     // 할당 받은 값들을 리턴시켜주기
     // ArraryList 해주면 좋고 아니면 말고 ㅋㅋ
 
-    private ArrayList tests = new ArrayList();                      // ArrayList형 tests 변수를 만들고 ArrayList를 생성한 후
+    private final ArrayList<PhoneDTO> tests = new ArrayList<>();                      // ArrayList형 tests 변수를 만들고 ArrayList를 생성한 후
 
 
     public String ptest(PhoneDTO phoneDTO){                         // 어디서든 접근할 수 있는 문자열 ptest를 만들고 매개변수를 phoneDTO로 만든다.
@@ -38,27 +38,30 @@ public class Prepository {
         return "에 해당되는 이름의 정보가 삭제되었습니다.";
     }
 
-    public String  ptest3(int num, String re){
-        PhoneDTO phoneDTO = (PhoneDTO)tests.get(num);
-        if(num == 1){
-            phoneDTO.setName(re);
-        }
-        else if(num == 2){
-            phoneDTO.setPhone(re);
-        }
-        else if(num == 3){
-            phoneDTO.setGroup(re);
-        }
-        else if(num == 4){
-            phoneDTO.setMemo(re);
-        }
-        else if(num == 5){
-            phoneDTO.setEmail(re);
-        }
-        else{
-            return "잘못 입력";
-        }
+    public String ptest3(int num,int upDate, String inputData)
+    {
+            PhoneDTO test3 = tests.get(num-1);                      // 사용자가 num의 입력 값을 받으면 1부터 시작하지만
+                                                                    // ArrayList의 인덱스 값은 0부터 시작한다.
+            //"ex) 1.이름 2.번호 3.그룹 4.메모 5.이메일                 // 따라서 사용자한테 받은 num의 값을 -1 해줌으로써 인덱스 값으로 변환시켜준다.
+            switch (upDate) {                                       // uoDate에 해당되는 번호에 따라 inputData 값을 덮어 씌어준다.
+                case 1:
+                    test3.setName(inputData);
+                    break;
+                case 2:
+                    test3.setPhone(inputData);
+                    break;
+                case 3:
+                    test3.setGroup(inputData);
+                    break;
+                case 4:
+                    test3.setMemo(inputData);
+                    break;
+                case 5:
+                    test3.setEmail(inputData);
+                    break;
 
-        return phoneDTO.toString() + "수정 완료";
+                default:
+                    return "Error";
+            }return test3.toString();
     }
 }
