@@ -27,9 +27,11 @@ public class Application01 {
                 case 1:
                     memberService.singUpMembers();
                     break;
+                    // 서비스에 있는 members 메소드로 이동
                 case 2:
                     memberService.showAllMembers();
                     break;
+                // 서비스에 있는 members 메소드로 이동
                 case 9:
                     System.out.println("프로그램 종료");
                     break;
